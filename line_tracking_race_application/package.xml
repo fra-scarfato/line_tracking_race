@@ -8,12 +8,16 @@
   <maintainer email="d.caradonna@santannapisa.it"> Daniele Caradonna</maintainer>
   <maintainer email="f.iori@santannapisa.it"> Francesco Iori</maintainer>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
 
-  <test_depend>ament_lint_auto</test_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <exec_depend>pynput-pip</exec_depend>
 
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>
 
