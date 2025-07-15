@@ -1,0 +1,4 @@
+source;share/line_tracking_race_description/local_setup.bash
+source;share/line_tracking_race_description/local_setup.dsv
+source;share/line_tracking_race_description/local_setup.sh
+source;share/line_tracking_race_description/local_setup.zsh

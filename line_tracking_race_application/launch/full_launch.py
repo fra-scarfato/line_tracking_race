@@ -15,6 +15,7 @@ def generate_launch_description():
     planner_launch = os.path.join(app_pkg, 'launch', 'planner_launch.py')
     control_launch = os.path.join(app_pkg, 'launch', 'control_launch.py')
     race_launch = os.path.join(sim_pkg, 'launch', 'line_tracking_race.launch.py')
+    referee_launch = os.path.join(app_pkg, 'launch', 'referee_launch.py')
 
     return LaunchDescription([
         # Declare arguments
@@ -45,6 +46,13 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(race_launch)
         ),
+        
+        # Include simulation launch
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(referee_launch)
+        ),
+
+
 
         
     ])

@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    start_line_p1: [0.0, 0.0]
+    start_line_p2: [10.0, 0.0]
+    offtrack_threshold: 0.5

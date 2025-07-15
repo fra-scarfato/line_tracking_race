@@ -1,0 +1,10 @@
+/**:
+  ros__parameters:
+    line_position_x: 0.0      # X coordinate of the finish line center       
+    line_position_y: 0.0      # Y coordinate of the finish line center  
+    line_axis: "y"            # 'x' for vertical line, 'y' for horizontal line  
+    target_yaw: 2.34          # Expected robot heading when crossing (radians)  
+    yaw_threshold_rad: 0.18   # Allowable yaw deviation (±10.3 degrees)  
+    min_lap_time_sec: 10.0    # Minimum time between valid laps (seconds)  
+    position_threshold: 0.2   # Tolerance zone around finish line (meters)  
+    line_length: 1.0          # Length of the finish line segment (meters)

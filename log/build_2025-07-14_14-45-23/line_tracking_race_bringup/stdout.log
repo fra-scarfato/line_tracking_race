@@ -1,0 +1,42 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found line_tracking_race_description: 0.0.0 (/home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_description/share/line_tracking_race_description/cmake)
+-- Found line_tracking_race_gazebo: 0.0.0 (/home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/cmake)
+-- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup
+-- Install configuration: ""
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/launch
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/launch/line_tracking_race.launch.py
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/config
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/config/line_tracking_race.rviz
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/config/car_properties.yaml
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/config/ros_gz_bridge.yaml
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/ament_index/resource_index/package_run_dependencies/line_tracking_race_bringup
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/ament_index/resource_index/parent_prefix_path/line_tracking_race_bringup
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/environment/ament_prefix_path.dsv
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/environment/path.sh
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/environment/path.dsv
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/local_setup.bash
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/local_setup.sh
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/local_setup.zsh
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/local_setup.dsv
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.dsv
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/ament_index/resource_index/packages/line_tracking_race_bringup
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/cmake/line_tracking_race_bringupConfig.cmake
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/cmake/line_tracking_race_bringupConfig-version.cmake
+-- Installing: /home/developer/ros2_ws/src/line_tracking_race/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.xml

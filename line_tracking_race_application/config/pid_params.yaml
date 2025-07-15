@@ -1,5 +1,5 @@
 /**:
   ros__parameters:
     k_p: 2.5
-    k_i: 0.7
+    k_i: 1.1
     k_d: 0.15

@@ -35,15 +35,19 @@ def generate_launch_description():
 
     x_pos_arg = DeclareLaunchArgument(
         "x_pos", default_value="0.0", description="X position to spawn the robot"
+        #"x_pos", default_value="0.0", description="X position to spawn the robot"
     )
     y_pos_arg = DeclareLaunchArgument(
         "y_pos", default_value="0.0", description="Y position to spawn the robot"
+        #"y_pos", default_value="0.0", description="Y position to spawn the robot"
     )
     z_pos_arg = DeclareLaunchArgument(
         "z_pos", default_value="0.45", description="Z position to spawn the robot"
+        #"z_pos", default_value="0.45", description="Z position to spawn the robot"
     )
     yaw_arg = DeclareLaunchArgument(
-        "yaw", default_value="3.142", description="Yaw orientation to spawn the robot"
+        "yaw", default_value="2.34", description="Yaw orientation to spawn the robot"
+        #"yaw", default_value="3.142", description="Yaw orientation to spawn the robot"
     )
 
     # rviz_arg = DeclareLaunchArgument(

@@ -9,6 +9,7 @@ and outputs velocity commands to minimize tracking error.
 import os
 import csv
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 import rclpy
 from rclpy.node import Node
@@ -17,7 +18,7 @@ from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
 
 # Control constants
-MAX_THRUST = 10.0      # Maximum forward velocity (m/s)
+MAX_THRUST = 1.4      # Maximum forward velocity (m/s)
 RAMP_UP = 0.5         # Thrust increment per control cycle for smooth acceleration
 
 class ControlNode(Node):
@@ -90,6 +91,8 @@ class ControlNode(Node):
         
         # Open performance evaluation file
         self.open_performance_evaluation_file(date)
+        self.errors = []
+        self.times = []
 
     def _initialize_control_variables(self):
         """Initialize PID control and state variables."""
@@ -130,7 +133,9 @@ class ControlNode(Node):
             msg (Float32): ROS2 message containing the tracking error
         """
         error = msg.data
+        self.errors.append(error)
         time_now = self.get_clock().now()
+        self.times.append(time_now.nanoseconds / 1e9)
 
         # Initialize timing on first callback
         if not self.started:
@@ -255,6 +260,16 @@ class ControlNode(Node):
             "Time", "dt", "Error", "CV", "LinearV", "AngularV", "P", "I", "D"
         ])
 
+    def plot_error(self):
+        plt.figure()
+        plt.plot(self.times, self.errors, label="Tracking Error")
+        plt.xlabel("Time (s)")
+        plt.ylabel("Error")
+        plt.title("Error Over Time")
+        plt.grid(True)
+        plt.legend()
+        plt.show()
+
     def open_performance_evaluation_file(self, date):
         """
         Open CSV file for logging performance evaluation metrics.
@@ -344,10 +359,13 @@ def main(args=None):
         rclpy.spin(node)
     except KeyboardInterrupt:
         # Handle graceful shutdown on Ctrl+C
+        node.plot_error()
         node.stop()
     finally:
         # Cleanup resources
         if rclpy.ok():
+            node.plot_error()
+
             node.destroy_node()
             rclpy.shutdown()
 

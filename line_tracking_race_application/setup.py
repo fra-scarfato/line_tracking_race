@@ -31,7 +31,8 @@ setup(
     entry_points={
         'console_scripts': [
             'planner_node = line_tracking.nodes.planner_node:main',
-            'control_node = line_tracking.nodes.control_node:main'
+            'control_node = line_tracking.nodes.control_node:main',
+            'referee_node = line_tracking.nodes.referee_node:main',
         ],
     },
 )
