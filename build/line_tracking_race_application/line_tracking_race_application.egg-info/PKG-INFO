@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: line-tracking-race-application
-Version: 0.1.0
-Summary: Line tracking logic for a differential-drive robot in ROS 2
-Maintainer: Me
-Maintainer-email: me@email.com
-License: MIT

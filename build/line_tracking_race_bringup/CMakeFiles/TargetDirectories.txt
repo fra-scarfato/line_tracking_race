@@ -1,9 +1,0 @@
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/uninstall.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/line_tracking_race_bringup_uninstall.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/test.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/edit_cache.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/rebuild_cache.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/list_install_components.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/install.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/install/local.dir
-/home/developer/ros2_ws/src/line_tracking_race/build/line_tracking_race_bringup/CMakeFiles/install/strip.dir

@@ -1,4 +1,0 @@
-source;share/line_tracking_race_description/environment/ament_prefix_path.sh
-source;share/line_tracking_race_description/environment/line_tracking_race_description.sh
-source;share/line_tracking_race_description/environment/path.sh
-source;share/line_tracking_race_description/environment/line_tracking_race_description.dsv

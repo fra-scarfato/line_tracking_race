@@ -1,8 +1,0 @@
-source;share/line_tracking_race_gazebo/hook/cmake_prefix_path.ps1
-source;share/line_tracking_race_gazebo/hook/cmake_prefix_path.dsv
-source;share/line_tracking_race_gazebo/hook/cmake_prefix_path.sh
-source;share/line_tracking_race_gazebo/local_setup.bash
-source;share/line_tracking_race_gazebo/local_setup.dsv
-source;share/line_tracking_race_gazebo/local_setup.ps1
-source;share/line_tracking_race_gazebo/local_setup.sh
-source;share/line_tracking_race_gazebo/local_setup.zsh
