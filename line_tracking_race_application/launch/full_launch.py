@@ -4,6 +4,8 @@ from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 import os
+from launch_ros.actions import Node
+
 
 
 def generate_launch_description():
@@ -34,6 +36,14 @@ def generate_launch_description():
             }.items()
         ),
 
+        Node(
+        package='line_tracking_race_application',
+        executable='referee_gui_node',
+        name='referee_gui_node',
+        output='screen',
+        ),
+
+
         # Include control.launch.py
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(control_launch),
@@ -51,8 +61,5 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(referee_launch)
         ),
-
-
-
-        
+   
     ])

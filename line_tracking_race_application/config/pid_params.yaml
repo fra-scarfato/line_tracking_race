@@ -1,5 +1,5 @@
 /**:
   ros__parameters:
-    k_p: 2.5
-    k_i: 1.1
-    k_d: 0.15
+    k_p: 4.5 #before was 4.5  with this config with vwlocity 1.45
+    k_i: 1.1 #before was 1.1
+    k_d: 0.35 #before 0.35

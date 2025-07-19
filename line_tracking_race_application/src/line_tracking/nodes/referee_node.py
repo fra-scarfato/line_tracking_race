@@ -9,6 +9,11 @@ from nav_msgs.msg import Odometry
 from rclpy.time import Time
 from ament_index_python.packages import get_package_share_directory
 
+###STO MODIFICANDO
+import json
+from std_msgs.msg import String
+import time
+
 # Default configuration constants for the referee system
 DEFAULT_LINE_POSITION_X = 0.0
 DEFAULT_LINE_POSITION_Y = 0.0
@@ -27,13 +32,20 @@ class RefereeNode(Node):
     """
     def __init__(self):
         super().__init__('referee_node')
-
+        self.current_lap_start_time = None
         self._declare_parameters()
         self._get_parameters()
         self._initialize_state()
         self._setup_logging_files() # Renamed for clarity
         self._setup_subscription()
+        
+        self.stats_pub = self.create_publisher(String, '/referee/stats', 10)
+        self.create_timer(0.5, self.publish_stats)
+        self.lap_times_pub = self.create_publisher(String, '/referee/lap_times', 10)
+        self.create_timer(1.0, self.publish_lap_times)
 
+        
+        # Initialize subscriptions, timers, publishers here
         self.get_logger().info(
             f"Referee initialized: "
             f"{'vertical' if self.line_axis=='x' else 'horizontal'} line at "
@@ -69,6 +81,43 @@ class RefereeNode(Node):
         self.lap_counter = 0
         self.lap_durations = []
         self.total_distance = 0.0
+
+    ### STO MODIFICANDO
+    def publish_stats(self):
+        # Get current ROS time instead of system time
+        now = self.get_clock().now().nanoseconds / 1e9
+    
+        # Use current_lap_start_time if available, otherwise use session_start_time
+        if self.current_lap_start_time is not None:
+            current_lap_time = now - self.current_lap_start_time
+        elif self.session_start_time is not None:
+            current_lap_time = now - self.session_start_time
+        else:
+            current_lap_time = 0.0
+
+        if self.lap_durations:
+            best_lap = min(self.lap_durations)
+            avg_lap = sum(self.lap_durations) / len(self.lap_durations)
+        else:
+            best_lap = 0.0
+            avg_lap = 0.0
+
+        stats = {
+            'lap_counter': self.lap_counter,
+            #'current_lap_time': current_lap_time,
+            'best_lap_time': best_lap,
+            'average_lap_time': avg_lap,
+            'total_distance': self.total_distance,
+        }
+        msg = String()
+        msg.data = json.dumps(stats)
+        self.stats_pub.publish(msg)
+
+
+    def publish_lap_times(self):
+        msg = String()
+        msg.data = json.dumps(self.lap_durations)
+        self.lap_times_pub.publish(msg)
 
     def _setup_logging_files(self):
         # This now sets up both the CSV for data and the Markdown file for the report
@@ -113,6 +162,7 @@ class RefereeNode(Node):
             diff = abs(self._normalize_angle(yaw - self.target_yaw))
             if diff <= self.yaw_threshold:
                 self._process_valid_crossing(t, yaw, pos)
+
         self.previous_position = pos
 
     def _did_cross_line(self, start, end):
@@ -135,10 +185,12 @@ class RefereeNode(Node):
                 self.lap_durations.append(lap_duration)
                 self._log_lap_to_csv(self.lap_counter, lap_duration, now, yaw, pos)
                 self.get_logger().info(f"Lap {self.lap_counter} completed in {lap_duration:.2f}s (Yaw: {math.degrees(yaw):.1f}°)")
+                self.current_lap_start_time = now  # <-- Reset timer here
             else:
-                self.get_logger().warn(f"Crossing too soon after last lap ({lap_duration:.2f}s). Ignoring.")
+                self.get_logger().warning(f"Crossing too soon after last lap ({lap_duration:.2f}s). Ignoring.")
         else:
             self.get_logger().info("First finish line crossing detected. Lap timing started.")
+            self.current_lap_start_time = now  # <-- Initialize on first crossing
         self.last_lap_time = now
 
     def _log_lap_to_csv(self, lap_num, lap_time, timestamp, yaw, pos):

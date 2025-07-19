@@ -18,7 +18,7 @@ from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
 
 # Control constants
-MAX_THRUST = 1.4      # Maximum forward velocity (m/s)
+MAX_THRUST = 1.45   # Maximum forward velocity (m/s)
 RAMP_UP = 0.5         # Thrust increment per control cycle for smooth acceleration
 
 class ControlNode(Node):
