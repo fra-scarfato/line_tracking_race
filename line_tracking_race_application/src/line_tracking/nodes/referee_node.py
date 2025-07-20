@@ -251,9 +251,6 @@ class RefereeNode(Node):
         if self.prev_s is not None and self.prev_timestamp is not None:
             dt = t - self.prev_timestamp
             speed = self._calculate_curvilinear_speed(s_cur, self.prev_s, dt)
-            self.get_logger().info(
-                        f"Speed = {speed:.3f}"
-                    )
             self.instantaneous_speeds.append(speed)
 
         # Lap detection logic
