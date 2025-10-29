@@ -30,3 +30,4 @@ ros2 launch line_tracking_race_bringup line_tracking_race.launch.py
 
 ## 3. Topics and Services
 Explore using the ROS2 command line which information are available and design your high-level node. You can use the package `line_tracking_race_application` as container of your nodes.
+![](https://github.com/fra-scarfato/line_tracking_race/blob/main/docs/figures/output.gif)
